@@ -23,7 +23,6 @@ for line in open_file:
     try:
         row = y.fetchone()[0]
         y.execute('UPDATE Counts SET count = count + 1 WHERE org = ?', (org,))
-
     except:
         y.execute('INSERT INTO Counts(org,count) VALUES(?,1)',(org,))
 
